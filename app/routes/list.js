@@ -1,7 +1,10 @@
 import Ember from 'ember';
-
 export default Ember.Route.extend({
-    model() {
+  ajax: Ember.inject.service(),
+  model() {
+    return this.get('ajax').request('https://jsonplaceholder.typicode.com/posts/');
+  }
+  /*  model() {
     return [{
       id: 'grand-old-mansion',
       title: 'Grand Old Mansion',
@@ -32,5 +35,5 @@ export default Ember.Route.extend({
       description: 'Convenience is at your doorstep with this charming downtown rental. Great restaurants and active night life are within a few feet.'
 
     }];
-  }
+  }*/
 });

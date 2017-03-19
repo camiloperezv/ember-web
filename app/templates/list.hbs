@@ -1,29 +1,20 @@
 <div class="jumbo">
   <div class="right tomster"></div>
-  <h2>About Super Rentals</h2>
-  <p>
-    The Super Rentals website is a delightful project created to explore Ember.
-    By building a property rental site, we can simultaneously imagine traveling
-    AND building Ember applications.
-  </p>
+  <h2>Mira los post</h2>
   {{#link-to 'index' class="button"}}
-    Informacion
+    Index
   {{/link-to}}
-  {{#each model as |rental|}}
+  {{#each model as |post|}}
   <article class="listing">
-    <h3>{{rental.title}}</h3>
+    <span>{{post.id}}</span>
+    <h3>{{post.title}}</h3>
     <div class="detail owner">
-      <span>Owner:</span> {{rental.owner}}
+      {{post.body}}
     </div>
-    <div class="detail type">
-      <span>Type:</span> {{rental.type}}
-    </div>
-    <div class="detail location">
-      <span>Location:</span> {{rental.city}}
-    </div>
-    <div class="detail bedrooms">
-      <span>Number of bedrooms:</span> {{rental.bedrooms}}
-    </div>
+    {{#link-to 'detail' post.id class="button"}}
+      Index
+    {{/link-to}}
+    
   </article>
 {{/each}}
 </div>

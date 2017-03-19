@@ -1,0 +1,12 @@
+<article class="listing">
+  <span>{{model.id}}</span>
+  <h4>{{input class="form-control" value=model.title}}</h4>
+  <h3>{{model.title}} </h3>
+  <div class="detail owner">
+    {{model.body}}
+  </div>
+  <button {{action 'savePost'}} class="button">Save</button>
+  <button {{action 'deletePost'}} class="button button-red">Delete</button>
+</article>
+  {{#link-to 'list' class="button marging-left-10"}}Ver Lista {{/link-to}}
+{{outlet}}
