@@ -6,13 +6,13 @@
   {{/link-to}}
   {{#each model as |post|}}
   <article class="listing">
-    <span>{{post.id}}</span>
-    <h3>{{post.title}}</h3>
+    <span></span>
+    <h3>{{post.id}} - {{post.title}}</h3>
     <div class="detail owner">
       {{post.body}}
     </div>
-    {{#link-to 'detail' post.id class="button"}}
-      Index
+    {{#link-to 'detail' post.id class="btn btn-success"}}
+      Editar
     {{/link-to}}
     
   </article>

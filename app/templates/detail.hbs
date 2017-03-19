@@ -8,6 +8,6 @@
   <button {{action 'savePost' model}} class="btn btn-success">Save</button>
   <button {{action 'deletePost' model.id}} class="btn btn-danger">Delete</button>
   <button {{action 'refreshPost' model.id}} class="btn btn-info">Restore</button>
+  {{#link-to 'list' class="btn btn-warning"}}Ver Lista {{/link-to}}
 </article>
-  {{#link-to 'list' class="button marging-left-10"}}Ver Lista {{/link-to}}
 {{outlet}}
