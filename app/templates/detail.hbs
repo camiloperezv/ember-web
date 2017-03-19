@@ -5,8 +5,9 @@
     <label for="content">Contenido</label>
     {{textarea class="form-control" rows="5" value=model.body}}
   </div>
-  <button {{action 'savePost' model}} class="button">Save</button>
-  <button {{action 'deletePost' model.id}} class="button button-red">Delete</button>
+  <button {{action 'savePost' model}} class="btn btn-success">Save</button>
+  <button {{action 'deletePost' model.id}} class="btn btn-danger">Delete</button>
+  <button {{action 'refreshPost' model.id}} class="btn btn-info">Restore</button>
 </article>
   {{#link-to 'list' class="button marging-left-10"}}Ver Lista {{/link-to}}
 {{outlet}}
