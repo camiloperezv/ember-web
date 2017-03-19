@@ -5,17 +5,21 @@ export default Ember.Controller.extend({
   actions: {
     refreshPost: function (id) {
       var thiz = this;
+      
       this.get('ajax').request('https://jsonplaceholder.typicode.com/posts/' + id).then(function success(data) {
         thiz.set('model', data);
       }, function error(err) {
-        console.log('erro', err)
+        console.log('error updating', err)
       });
     },
     savePost: function (currentPost) {
+      var thiz = this;
       this.get('ajax').request('https://jsonplaceholder.typicode.com/posts/' + currentPost.id, {
         method: 'PUT',
         data: currentPost
       }).then(function success(data) {
+          alert('Action completed')
+          thiz.transitionToRoute('list');
           console.log('there the data is', data)
         }, function error(err) {
           console.log('the promise is oops', err);
@@ -23,9 +27,12 @@ export default Ember.Controller.extend({
       console.log('currentPost', currentPost);
     },
     deletePost(id) {
+      var thiz = this;
       this.get('ajax').request('https://jsonplaceholder.typicode.com/posts/' + id,{
         method: 'DELETE'
       }).then(function success(data) {
+          alert('Action completed')
+          thiz.transitionToRoute('list');
           console.log('there the data is', data)
         }, function error(err) {
           console.log('the promise is oops', err);
